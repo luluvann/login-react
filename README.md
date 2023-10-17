@@ -7,6 +7,8 @@
 - The login page show an error message when the wrong credentiales are used (simple validation in TS)
 
 ## Deployment link in GH pages
+[https://luluvann.github.io/login-react/](https://luluvann.github.io/login-react/)
+
 
 ## Available Scripts
 
