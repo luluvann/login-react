@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/login-react/static/css/main.073c9b0a.css",
-    "main.js": "/login-react/static/js/main.cbe8a137.js",
+    "main.css": "/login-react/static/css/main.80499110.css",
+    "main.js": "/login-react/static/js/main.ee720370.js",
     "static/js/787.d485fe31.chunk.js": "/login-react/static/js/787.d485fe31.chunk.js",
-    "static/media/logo.svg": "/login-react/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/national-cancer-institute-L7en7Lb-Ovc-unsplash.jpg": "/login-react/static/media/national-cancer-institute-L7en7Lb-Ovc-unsplash.9fbab2d23cfec6f9fceb.jpg",
     "index.html": "/login-react/index.html",
-    "main.073c9b0a.css.map": "/login-react/static/css/main.073c9b0a.css.map",
-    "main.cbe8a137.js.map": "/login-react/static/js/main.cbe8a137.js.map",
+    "main.80499110.css.map": "/login-react/static/css/main.80499110.css.map",
+    "main.ee720370.js.map": "/login-react/static/js/main.ee720370.js.map",
     "787.d485fe31.chunk.js.map": "/login-react/static/js/787.d485fe31.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.cbe8a137.js"
+    "static/css/main.80499110.css",
+    "static/js/main.ee720370.js"
   ]
 }
