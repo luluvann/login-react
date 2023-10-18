@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+/* Global variable styles available accross the application */
+:root {
+  /* palette - regular */
+  --color1: #ccd6f6;
+  --color2: #8892b0;
+  --color3: #64ffda;
+  --color4: #112240;
+  --color5: #0a192f;
+
+  --color6: #5903E5;
+  --color7: #FFFFFF;
+  --color8: #8C00FB;
+  --color10: #04021D;
+
+  /* palette - success */
+  --green-01: #78C4AC;
+  --green-02: #9FEED4;
+  --green-03: #E2FCF3;
+
+  /* palette - error */
+  --red-01: #B41D3E;
+  --red-02: #EF3059;
+  --red-03: #FFF4F5;
+
+  /* fonts families */
+  --font1: 'IBM Plex Sans', sans-serif;
+  --font2: 'IBM Plex Sans Condensed', sans-serif;
+
+  /* fonts sizes */
+  --font-size1: 10px;
+  --font-size2: 14px;
+  --font-size3: 17px;
+  --font-size4: 24px;
+
+  /* fonts weight */
+  --font-weight1: 400;
+  --font-weight2: 500;
+
+  /* box-shadows */
+  --box-shadow-negative-2: inset 0px 0px 2px rgba(52, 52, 75, 0.1), inset 0px 2px 3px rgba(52, 52, 75, 0.05);
+  --box-shadow-negative-1: inset 0px 0px 1px rgba(52, 52, 75, 0.1), inset 0px 1px 1px rgba(52, 52, 75, 0.05);
+  --box-shadow-positive-1: 0px 0px 1px rgba(52, 52, 75, 0.1), 0px 1px 1px rgba(52, 52, 75, 0.05);
+  --box-shadow-positive-2: 0px 0px 1px rgba(52, 52, 75, 0.1), 0px 1px 2px rgba(52, 52, 75, 0.1);
+  --box-shadow-positive-3: 0px 0px 1px rgba(52, 52, 75, 0.1), 0px 1px 2px rgba(52, 52, 75, 0.1);
+  --box-shadow-positive-4: 0px 1px 3px rgba(52, 52, 75, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-positive-5: 0px 1px 3px rgba(52, 52, 75, 0.08), 0px 4px 6px rgba(52, 52, 75, 0.1);
+  --box-shadow-positive-6: 0px 6px 12px rgba(52, 52, 75, 0.08), 0px 16px 24px rgba(0, 0, 0, 0.1);
+  --box-shadow-positive-7: 0px 6px 12px rgba(52, 52, 75, 0.08), 0px 16px 24px rgba(52, 52, 75, 0.1);
+
+  /* spacing (padding, margin) */
+  --spacing1: 4px;
+  --spacing2: 8px;
+  --spacing3: 12px;
+  --spacing4: 16px;
+  --spacing5: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global styles */
+body {
+  font-family: var(--font1);
+  height: 100%;
+  position: relative;
+  margin-top: 0;
+  background-color: var(--color10);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* Font styles */
+.font-style1 {
+  font-family: var(--font1);
+  font-size: var(--font-size2);
+  font-weight: var(--font-weight1);
+  line-height: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-style2 {
+  font-family: var(--font1);
+  font-size: var(--font-size4);
+  font-weight: var(--font-weight2);
+  line-height: 16px;
+}
+
+/* Font colors */
+.font-regular-color1 {
+  color: var(--color1);
+}
+
+.font-regular-color2 {
+  color: var(--color2);
+}
+
+.font-regular-color3 {
+  color: var(--color3);
+}
+
+.font-regular-color4 {
+  color: var(--color4);
+}
+
+.font-regular-color5 {
+  color: var(--color5);
+}
+
+.font-regular-color7 {
+  color: var(--color7);
+}
+
+.font-success-color1 {
+  color: var(--green-01);
+}
+
+.font-success-color2 {
+  color: var(--green-02);
+}
+
+.font-success-color3 {
+  color: var(--green-03);
+}
+
+.font-error-color1 {
+  color: var(--red-01);
+}
+
+.font-error-color2 {
+  color: var(--red-02);
+}
+
+.font-error-color3 {
+  color: var(--red-03);
+}
+
+/* Box-shadows */
+.box-shadow-negative-2 {
+  box-shadow: var(--box-shadow-negative-2);
+}
+
+.box-shadow-negative-1 {
+  box-shadow: var(--box-shadow-negative-1);
+}
+
+.box-shadow-positive-1 {
+  box-shadow: var(--box-shadow-positive-1);
+}
+
+.box-shadow-positive-2 {
+  box-shadow: var(--box-shadow-positive-2);
+}
+
+.box-shadow-positive-3 {
+  box-shadow: var(--box-shadow-positive-3);
+}
+
+.box-shadow-positive-4 {
+  box-shadow: var(--box-shadow-positive-4);
+}
+
+.box-shadow-positive-5 {
+  box-shadow: var(--box-shadow-positive-5);
+}
+
+.box-shadow-positive-6 {
+  box-shadow: var(--box-shadow-positive-6);
+}
+
+.box-shadow-positive-7 {
+  box-shadow: var(--box-shadow-positive-7);
 }
