@@ -23,14 +23,16 @@ export interface Button {
     */
     icon?: IconProp,
     /**
-    * An option text to display on the button.
+    * An optional text to display on the button.
     */
     text?: string,
     /**
-    * A flag indicating whether the button should adjust its size to fit its content.
+    * An optional flag indicating whether the button should adjust its size to fit its content.
     */
     fitContent?: boolean,
-
+    /**
+    * An optional additional className to style the button component.
+    */
     additionalClassName?: string,
 }
 
