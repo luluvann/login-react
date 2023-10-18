@@ -13,8 +13,8 @@ root.render(
 
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<App />}></Route>
-      <Route path='dashboard' element={<DashboardPage />}></Route>
+      <Route path='/login-react' element={<App />}></Route>
+      <Route path='/login-react/dashboard' element={<DashboardPage />}></Route>
     </Routes>
   </BrowserRouter>
 

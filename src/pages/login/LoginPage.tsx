@@ -34,7 +34,7 @@ function LoginPage() {
       const result: ApiResult = Login(email ?? '', password ?? '');
       if (result.success) {
         setLoginError('You have successfully logged in!')
-        navigate('/dashboard');
+        navigate('/login-react/dashboard');
       } else {
         const message = result.message ?? '';
         setLoginError(message)

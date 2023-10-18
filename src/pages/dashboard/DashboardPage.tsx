@@ -6,7 +6,7 @@ function DashboardPage() {
         <>
             <div className='font-regular-color7'>You have successfully logged in! This page will be protected later!</div>
             <Link to={{
-                pathname: '/',
+                pathname: '/login-react',
             }}>Go back to Login page</Link>
         </>
     );
