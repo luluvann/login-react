@@ -1,0 +1,49 @@
+.label-input__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing2);
+    height: calc(100% + 20px);
+
+    &.error {
+        input {
+            background-color: var(--red-03);
+            outline: solid 2px var(--red-01);
+        }
+
+        div {
+            padding-left: var(--spacing2);
+            font-size: var(--font-size2);
+        }
+    }
+
+    label {
+        border-width: 0px 0px 0px 0px;
+        border-radius: 5px 5px 5px 5px;
+        font-weight: var(--font-weight2);
+
+        &.light {
+            color: var(--color7);
+        }
+    }
+
+    input {
+        padding: var(--spacing2);
+        font-size: var(--font-size3);
+        line-height: 24px;
+        border-width: 0;
+        border-radius: 4px;
+
+        &::placeholder {
+            font-size: var(--font-size3);
+            line-height: 24px;
+        }
+
+        &:focus-visible {
+            outline: solid 2px var(--color8);
+        }
+    }
+
+    div {
+        min-height: 16px;
+    }
+}
