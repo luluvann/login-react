@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/login-react/static/css/main.80499110.css",
-    "main.js": "/login-react/static/js/main.ee720370.js",
+    "main.js": "/login-react/static/js/main.68b55e92.js",
     "static/js/787.d485fe31.chunk.js": "/login-react/static/js/787.d485fe31.chunk.js",
     "static/media/national-cancer-institute-L7en7Lb-Ovc-unsplash.jpg": "/login-react/static/media/national-cancer-institute-L7en7Lb-Ovc-unsplash.9fbab2d23cfec6f9fceb.jpg",
     "index.html": "/login-react/index.html",
     "main.80499110.css.map": "/login-react/static/css/main.80499110.css.map",
-    "main.ee720370.js.map": "/login-react/static/js/main.ee720370.js.map",
+    "main.68b55e92.js.map": "/login-react/static/js/main.68b55e92.js.map",
     "787.d485fe31.chunk.js.map": "/login-react/static/js/787.d485fe31.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80499110.css",
-    "static/js/main.ee720370.js"
+    "static/js/main.68b55e92.js"
   ]
 }
