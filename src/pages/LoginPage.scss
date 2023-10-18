@@ -1,0 +1,23 @@
+.temp {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  width: 300px;
+  padding: var(--spacing1) var(--spacing4);
+  position: relative;
+
+  .additional {
+    margin-top: auto;
+  }
+}
+
+img {
+  height: 328px;
+  border-radius: 5px 0 0 5px;
+}
+
+.temper {
+    display: flex;  
+    height: max-content;
+  }
