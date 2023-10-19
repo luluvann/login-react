@@ -2,7 +2,7 @@ import { useState } from "react";
 import './LoginPage.scss'
 import { StringIsEmpty, ValidationResult } from "../../helpers/validators";
 import ButtonComponent, { Button, ButtonVariant } from "../../components/design-system-components/button/ButtonComponent";
-import { ApiResult, Login } from "../../mocklogin/auth";
+import { ApiResult, login } from "../../mocklogin/auth";
 import LabelInputComponent, { InputType, LabelInput, LabelVariant } from "../../components/design-system-components/labelInput/LabelInputComponent";
 import image from '../../assets/pawel-czerwinski-LyZLaA5jtiY-unsplash.jpg';
 
@@ -107,7 +107,7 @@ function LoginPage() {
     states.actions.setPasswordError(passwordValidation);
 
     /* call API and performs login check, will set the login error if any */
-    const result: ApiResult = Login(states.values.email ?? '', states.values.password ?? '');
+    const result: ApiResult = login(states.values.email ?? '', states.values.password ?? '');
     if (result.success) {
       navigate('/login-react/dashboard');
     } else {

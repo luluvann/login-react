@@ -16,7 +16,7 @@ let UsersDB: User[] = [
     { id: 1, email: 'test1@test1.com', password: 'test1' }
 ]
 
-export function Login(email: string, password: string): ApiResult {
+export function login(email: string, password: string): ApiResult {
     const user = UsersDB.find((user) => user.email === email && user.password === password);
     if (user) {
         return { success: true, message: 'Login successful' };
