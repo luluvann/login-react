@@ -17,6 +17,7 @@ export enum InputType {
 export interface LabelInput {
     inputType: InputType,
     onInputChange: (value: string) => void;
+    onEnterPressed?: (enterPressed: boolean) => void;
     id?: number,
     labelText?: string,
     labelVariant?: LabelVariant,
@@ -39,6 +40,13 @@ function LabelInputComponent(props: Props) {
         props.properties.onInputChange(newValue); // Pass the input value to the parent component
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (props.properties.onEnterPressed && event.key === 'Enter') {
+            props.properties.onEnterPressed(true); // Pass the input value to the parent component
+        }
+
+    };
+
     return (
         <div className={`label-input__wrapper ${props.properties.inputValidator?.valid === false && props.properties.saveAttempt ? 'error' : ''}`}>
             {
@@ -47,11 +55,11 @@ function LabelInputComponent(props: Props) {
                 )
             }
             <input
-               
                 type={props.properties.inputType}
                 placeholder={props.properties.inputPlaceholder}
                 value={inputValue}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
             />
             <div className='font-error-color1'>{props.properties.inputValidator?.message}</div>
 
