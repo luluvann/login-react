@@ -69,6 +69,12 @@ body {
   width: 100%;
 }
 
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
 /* Font styles */
 .font-style1 {
   font-family: var(--font1);
