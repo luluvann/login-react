@@ -24,23 +24,7 @@ function LoginPage() {
   const loginButtonProperties: Button = {
     variant: ButtonVariant.PRIMARY,
     text: 'Login',
-    handleClick: () => {
-      setSaveAttempt(true);
-      const emailValidation = StringIsEmpty(email);
-      setEmailError(emailValidation);
-
-      const passwordValidation = StringIsEmpty(password);
-      setPasswordError(passwordValidation);
-
-      const result: ApiResult = Login(email ?? '', password ?? '');
-      if (result.success) {
-        setLoginError('You have successfully logged in!')
-        navigate('/login-react/dashboard');
-      } else {
-        const message = result.message ?? '';
-        setLoginError(message)
-      }
-    },
+    handleClick: () => handleLogin(),
     fitContent: true,
     additionalClassName: "additional"
   }
@@ -55,6 +39,11 @@ function LoginPage() {
       const emailValidation = StringIsEmpty(email);
       setEmailError(emailValidation);
     },
+    onEnterPressed: (enterPressed: boolean) => {
+      if (enterPressed) {
+        handleLogin();
+      }
+    },
     saveAttempt: saveAttempt,
     inputValidator: emailError,
   },
@@ -68,10 +57,33 @@ function LoginPage() {
       const emailValidation = StringIsEmpty(email);
       setPasswordError(emailValidation);
     },
+    onEnterPressed: (enterPressed: boolean) => {
+      if (enterPressed) {
+        handleLogin();
+      }
+    },
     saveAttempt: saveAttempt,
     inputValidator: passwordError,
   },
   ]
+
+  function handleLogin() {
+    setSaveAttempt(true);
+    const emailValidation = StringIsEmpty(email);
+    setEmailError(emailValidation);
+
+    const passwordValidation = StringIsEmpty(password);
+    setPasswordError(passwordValidation);
+
+    const result: ApiResult = Login(email ?? '', password ?? '');
+    if (result.success) {
+      setLoginError('You have successfully logged in!')
+      navigate('/login-react/dashboard');
+    } else {
+      const message = result.message ?? '';
+      setLoginError(message)
+    }
+  }
 
   return (
     <div className='temper'>
