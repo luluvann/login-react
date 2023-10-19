@@ -11,16 +11,38 @@ import { useNavigate } from 'react-router-dom';
 function LoginPage() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  /* Centralize the form states */
+  function useFormState() {
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [emailError, setEmailError] = useState<ValidationResult>();
+    const [passwordError, setPasswordError] = useState<ValidationResult>();
+    const [saveAttempt, setSaveAttempt] = useState<boolean>();
+    const [loginError, setLoginError] = useState<string>('');
 
-  const [emailError, setEmailError] = useState<ValidationResult>();
-  const [passwordError, setPasswordError] = useState<ValidationResult>();
+    return {
+      values: {
+        email,
+        password,
+        emailError,
+        passwordError,
+        saveAttempt,
+        loginError
+      },
+      actions: {
+        setEmail,
+        setPassword,
+        setEmailError,
+        setPasswordError,
+        setSaveAttempt,
+        setLoginError
+      }
+    };
+  }
 
-  const [saveAttempt, setSaveAttempt] = useState<boolean>();
+  const states = useFormState();
 
-  const [loginError, setLoginError] = useState<string>('');
-
+  /* Set Login Button component properties */
   const loginButtonProperties: Button = {
     variant: ButtonVariant.PRIMARY,
     text: 'Login',
@@ -29,23 +51,25 @@ function LoginPage() {
     additionalClassName: "additional"
   }
 
+  /* Set labelInput components properties */
   const labelInputPropertiesList: LabelInput[] = [{
     labelText: 'Email',
     labelVariant: LabelVariant.LIGHT,
     inputType: InputType.EMAIL,
     inputPlaceholder: "Your Email",
     onInputChange: (value: string) => {
-      setEmail(value);
-      const emailValidation = StringIsEmpty(email);
-      setEmailError(emailValidation);
+      const emailValidation = StringIsEmpty(states.values.email);
+
+      states.actions.setEmail(value);
+      states.actions.setEmailError(emailValidation);
     },
     onEnterPressed: (enterPressed: boolean) => {
       if (enterPressed) {
         handleLogin();
       }
     },
-    saveAttempt: saveAttempt,
-    inputValidator: emailError,
+    saveAttempt: states.values.saveAttempt,
+    inputValidator: states.values.emailError,
   },
   {
     labelText: 'Password',
@@ -53,35 +77,39 @@ function LoginPage() {
     inputType: InputType.PASSWORD,
     inputPlaceholder: "Your Password",
     onInputChange: (value: string) => {
-      setPassword(value);
-      const emailValidation = StringIsEmpty(email);
-      setPasswordError(emailValidation);
+      const emailValidation = StringIsEmpty(states.values.email);
+
+      states.actions.setPassword(value);
+      states.actions.setPasswordError(emailValidation);
+
     },
     onEnterPressed: (enterPressed: boolean) => {
       if (enterPressed) {
         handleLogin();
       }
     },
-    saveAttempt: saveAttempt,
-    inputValidator: passwordError,
+    saveAttempt: states.values.saveAttempt,
+    inputValidator: states.values.passwordError,
   },
   ]
 
+  /* Function that checks and calls the Login API, performs actions depending on the response from the API */
   function handleLogin() {
-    setSaveAttempt(true);
-    const emailValidation = StringIsEmpty(email);
-    setEmailError(emailValidation);
+    /* performs checks on each field if empty */
+    const emailValidation = StringIsEmpty(states.values.email);
+    const passwordValidation = StringIsEmpty(states.values.password);
 
-    const passwordValidation = StringIsEmpty(password);
-    setPasswordError(passwordValidation);
+    /* if errors, will set the errors on each field*/
+    states.actions.setSaveAttempt(true);
+    states.actions.setEmailError(emailValidation);
+    states.actions.setPasswordError(passwordValidation);
 
-    const result: ApiResult = Login(email ?? '', password ?? '');
+    /* call API and performs login check, will set the login error if any */
+    const result: ApiResult = Login(states.values.email ?? '', states.values.password ?? '');
     if (result.success) {
-      setLoginError('You have successfully logged in!')
       navigate('/login-react/dashboard');
     } else {
-      const message = result.message ?? '';
-      setLoginError(message)
+      states.actions.setLoginError(result.message || '');
     }
   }
 
@@ -92,7 +120,7 @@ function LoginPage() {
         <h1 className='font-style2 font-regular-color7'>Login</h1>
         <div style={{ display: 'flex', width: '100%', flexDirection: 'column', gap: '8px' }}>
           {labelInputPropertiesList.map((labelInput) => (<LabelInputComponent properties={labelInput} />))}
-          {loginError && <div className='font-regular-color1'>{loginError}</div>}
+          {states.values.loginError && <div className='font-regular-color1'>{states.values.loginError}</div>}
         </div>
         <ButtonComponent properties={loginButtonProperties}></ButtonComponent>
       </div>
