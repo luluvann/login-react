@@ -62,7 +62,7 @@ function LabelInputComponent(props: Props) {
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
             />
-            <div className='label-input__error font-error-color1'>{props.properties.inputValidator?.message}</div>
+            <div className='label-input__error-message font-error-color1'>{props.properties.inputValidator?.message}</div>
 
         </div>
     );
