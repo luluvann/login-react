@@ -8,7 +8,7 @@ import image from '../../assets/pawel-czerwinski-LyZLaA5jtiY-unsplash.jpg';
 
 import { useNavigate } from 'react-router-dom';
 
-/* Centralize the form states */
+/* Centralizes the form states */
 function useFormState() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -106,7 +106,7 @@ function LoginPage() {
     states.actions.setEmailError(emailValidation);
     states.actions.setPasswordError(passwordValidation);
 
-    /* call API and performs login check, will set the login error if any */
+    /* calls API and performs login check, will set the login error if any */
     const result: ApiResult = login(states.values.email ?? '', states.values.password ?? '');
     if (result.success) {
       navigate('/login-react/dashboard');
