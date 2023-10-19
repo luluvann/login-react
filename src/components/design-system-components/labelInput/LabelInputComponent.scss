@@ -1,37 +1,47 @@
-.label-input__wrapper {
+.label-input {
     display: flex;
     flex-direction: column;
     gap: var(--spacing2);
     height: calc(100% + 20px);
 
     &.error {
-        input {
+        input[type=text],
+        input[type=password],
+        input[type=email] {
             background-color: var(--red-03);
             outline: solid 2px var(--red-01);
         }
 
-        div {
+        &__error {
             padding-left: var(--spacing2);
             font-size: var(--font-size2);
         }
     }
 
-    label {
+    &__label {
         border-width: 0px 0px 0px 0px;
         border-radius: 5px 5px 5px 5px;
         font-weight: var(--font-weight2);
 
-        &.light {
+        &--light {
+            color: var(--color7);
+        }
+
+        &--dark {
             color: var(--color7);
         }
     }
 
-    input {
-        padding: var(--spacing2);
-        font-size: var(--font-size3);
-        line-height: 24px;
-        border-width: 0;
-        border-radius: 4px;
+    &__input {
+        &[type=text],
+        &[type=password],
+        &[type=email] {
+            padding: var(--spacing2);
+            font-size: var(--font-size3);
+            line-height: 24px;
+            border-width: 0;
+            border-radius: 4px;
+        }
 
         &::placeholder {
             font-size: var(--font-size3);
@@ -43,7 +53,7 @@
         }
     }
 
-    div {
+    &__error-message {
         min-height: 16px;
     }
 }

@@ -48,20 +48,21 @@ function LabelInputComponent(props: Props) {
     };
 
     return (
-        <div className={`label-input__wrapper ${props.properties.inputValidator?.valid === false && props.properties.saveAttempt ? 'error' : ''}`}>
+        <div className={`label-input ${props.properties.inputValidator?.valid === false && props.properties.saveAttempt ? 'error' : ''}`}>
             {
                 props.properties.labelText && (
-                    <label className={`${props.properties.labelVariant}`}>{props.properties.labelText} {props.properties.saveAttempt}</label>
+                    <label className={`label-input__label--${props.properties.labelVariant}`}>{props.properties.labelText}</label>
                 )
             }
             <input
+                className='label-input__input'
                 type={props.properties.inputType}
                 placeholder={props.properties.inputPlaceholder}
                 value={inputValue}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
             />
-            <div className='font-error-color1'>{props.properties.inputValidator?.message}</div>
+            <div className='label-input__error font-error-color1'>{props.properties.inputValidator?.message}</div>
 
         </div>
     );
