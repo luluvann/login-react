@@ -4,7 +4,7 @@
 - A login page with a good UX and an aesthetic UI
 - Made with a SPA framework like React or VueJs etc.
 - Composed of reusable components
-- The login page show an error message when the wrong credentiales are used (simple validation in TS)
+- The login page show an error message when the wrong credentials are used (simple validation in TS)
 
 ## Additional requirements
 - The user can press keyboard enter in either email or password field to login (same functionality as pressing login button)
