@@ -11,6 +11,13 @@
 - When email or password field are empty, an error message is triggered
 - When the login is successful, the user is redirected to the /dashboard page
 
+## User Story and acceptance criterias
+As user of a web application, I would like to login and access to login to my dashboard
+- When I go to the root route of the web app, I am redirected to a login page where I can enter my email and password
+- When I enter wrong email and/or password after I clicked on the login button, or after I pressed enter, an error message appears and tells me that my credentials are wrong
+- When press the login button or press enter and the email and/or password fields are empty, an error message will appear underneath the field that is empty
+- When I press the login button or press enter and that I have entered the right credentials, I am redirected to the /dashboard page
+
 ## Deployment link in GH pages
 [https://luluvann.github.io/login-react/](https://luluvann.github.io/login-react/)
 
