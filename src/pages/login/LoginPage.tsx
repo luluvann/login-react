@@ -8,37 +8,39 @@ import image from '../../assets/pawel-czerwinski-LyZLaA5jtiY-unsplash.jpg';
 
 import { useNavigate } from 'react-router-dom';
 
+/* Centralize the form states */
+function useFormState() {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [emailError, setEmailError] = useState<ValidationResult>();
+  const [passwordError, setPasswordError] = useState<ValidationResult>();
+  const [saveAttempt, setSaveAttempt] = useState<boolean>();
+  const [loginError, setLoginError] = useState<string>('');
+
+  return {
+    values: {
+      email,
+      password,
+      emailError,
+      passwordError,
+      saveAttempt,
+      loginError
+    },
+    actions: {
+      setEmail,
+      setPassword,
+      setEmailError,
+      setPasswordError,
+      setSaveAttempt,
+      setLoginError
+    }
+  };
+}
+
+
 function LoginPage() {
+  
   const navigate = useNavigate();
-
-  /* Centralize the form states */
-  function useFormState() {
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [emailError, setEmailError] = useState<ValidationResult>();
-    const [passwordError, setPasswordError] = useState<ValidationResult>();
-    const [saveAttempt, setSaveAttempt] = useState<boolean>();
-    const [loginError, setLoginError] = useState<string>('');
-
-    return {
-      values: {
-        email,
-        password,
-        emailError,
-        passwordError,
-        saveAttempt,
-        loginError
-      },
-      actions: {
-        setEmail,
-        setPassword,
-        setEmailError,
-        setPasswordError,
-        setSaveAttempt,
-        setLoginError
-      }
-    };
-  }
 
   const states = useFormState();
 
