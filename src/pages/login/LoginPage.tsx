@@ -4,7 +4,8 @@ import { StringIsEmpty, ValidationResult } from "../../helpers/validators";
 import ButtonComponent, { Button, ButtonVariant } from "../../components/design-system-components/button/ButtonComponent";
 import { ApiResult, Login } from "../../mocklogin/auth";
 import LabelInputComponent, { InputType, LabelInput, LabelVariant } from "../../components/design-system-components/labelInput/LabelInputComponent";
-import image from '../../assets/national-cancer-institute-L7en7Lb-Ovc-unsplash.jpg';
+import image from '../../assets/pawel-czerwinski-LyZLaA5jtiY-unsplash.jpg';
+
 import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
