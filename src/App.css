@@ -13,14 +13,14 @@
   --color10: #04021D;
 
   /* palette - success */
-  --green-01: #78C4AC;
-  --green-02: #9FEED4;
-  --green-03: #E2FCF3;
+  --green1: #78C4AC;
+  --green2: #9FEED4;
+  --green3: #E2FCF3;
 
   /* palette - error */
-  --red-01: #B41D3E;
-  --red-02: #EF3059;
-  --red-03: #FFF4F5;
+  --red1: #B41D3E;
+  --red2: #EF3059;
+  --red3: #FFF4F5;
 
   /* fonts families */
   --font1: 'IBM Plex Sans', sans-serif;
@@ -116,27 +116,27 @@ body {
 }
 
 .font-success-color1 {
-  color: var(--green-01);
+  color: var(--green1);
 }
 
 .font-success-color2 {
-  color: var(--green-02);
+  color: var(--green2);
 }
 
 .font-success-color3 {
-  color: var(--green-03);
+  color: var(--green3);
 }
 
 .font-error-color1 {
-  color: var(--red-01);
+  color: var(--red1);
 }
 
 .font-error-color2 {
-  color: var(--red-02);
+  color: var(--red2);
 }
 
 .font-error-color3 {
-  color: var(--red-03);
+  color: var(--red3);
 }
 
 /* Box-shadows */

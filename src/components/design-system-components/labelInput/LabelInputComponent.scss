@@ -8,8 +8,8 @@
         input[type=text],
         input[type=password],
         input[type=email] {
-            background-color: var(--red-03);
-            outline: solid 2px var(--red-01);
+            background-color: var(--red3);
+            outline: solid 2px var(--red1);
         }
 
         &__error {
