@@ -114,11 +114,11 @@ function LoginPage() {
   }
 
   return (
-    <div className='temper'>
-      <img src={image} />
-      <div className='temp'>
+    <div className='login'>
+      <img className='login__img' src={image} />
+      <div className='login__form'>
         <h1 className='font-style2 font-regular-color7'>Login</h1>
-        <div style={{ display: 'flex', width: '100%', flexDirection: 'column', gap: '8px' }}>
+        <div className='login__form__label-inputs-container'>
           {labelInputPropertiesList.map((labelInput) => (<LabelInputComponent properties={labelInput} />))}
           {states.values.loginError && <div className='font-regular-color1'>{states.values.loginError}</div>}
         </div>
