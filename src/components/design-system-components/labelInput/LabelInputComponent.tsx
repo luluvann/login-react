@@ -48,7 +48,7 @@ function LabelInputComponent(props: Props) {
     };
 
     return (
-        <div className={`label-input ${props.properties.inputValidator?.valid === false && props.properties.saveAttempt ? 'error' : ''}`}>
+        <div className={`label-input ${!props.properties.inputValidator?.valid && props.properties.saveAttempt && 'error'}`}>
             {
                 props.properties.labelText && (
                     <label className={`label-input__label--${props.properties.labelVariant}`}>{props.properties.labelText}</label>
