@@ -11,12 +11,7 @@ button {
     font-family: var(--font1);
     font-size: var(--font-size3);
 
-    &.fit-content {
-        width: fit-content;
-    }
-
     /* Button variants */
-
     &.primary {
         color: var(--color7);
         background-color: var(--color6);
@@ -30,5 +25,9 @@ button {
 
     &.delete {
         color: var(--red01);
+    }
+
+    &.fit-content {
+        width: fit-content;
     }
 }
