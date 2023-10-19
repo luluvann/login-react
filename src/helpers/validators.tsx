@@ -4,7 +4,7 @@ export interface ValidationResult {
 }
 
 export function StringIsEmpty(string: string): ValidationResult {
-    if (string) {
+    if (string.length > 0) {
         return { valid: true };
     } else {
         return { valid: false, message: 'Cannot be empty' };

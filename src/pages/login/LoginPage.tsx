@@ -44,6 +44,8 @@ function LoginPage() {
 
   const states = useFormState();
 
+  const [test, setTest] = useState<string>('');
+
   /* Set Login Button component properties */
   const loginButtonProperties: Button = {
     variant: ButtonVariant.PRIMARY,
@@ -60,10 +62,10 @@ function LoginPage() {
     inputType: InputType.EMAIL,
     inputPlaceholder: "Your Email",
     onInputChange: (value: string) => {
-      const emailValidation = StringIsEmpty(states.values.email);
-
       states.actions.setEmail(value);
+      const emailValidation = StringIsEmpty(value);
       states.actions.setEmailError(emailValidation);
+     
     },
     onEnterPressed: (enterPressed: boolean) => {
       if (enterPressed) {
@@ -79,10 +81,9 @@ function LoginPage() {
     inputType: InputType.PASSWORD,
     inputPlaceholder: "Your Password",
     onInputChange: (value: string) => {
-      const emailValidation = StringIsEmpty(states.values.email);
-
       states.actions.setPassword(value);
-      states.actions.setPasswordError(emailValidation);
+      const passwordValidation = StringIsEmpty(value);
+      states.actions.setPasswordError(passwordValidation);
 
     },
     onEnterPressed: (enterPressed: boolean) => {
