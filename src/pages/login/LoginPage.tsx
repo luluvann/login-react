@@ -121,7 +121,7 @@ function LoginPage() {
       <div className='login__form'>
         <h1 className='font-style2 font-regular-color7'>Login</h1>
         <div className='login__form__label-inputs-container'>
-          {labelInputPropertiesList.map((labelInput) => (<LabelInputComponent properties={labelInput} />))}
+          {labelInputPropertiesList.map((labelInput, index) => (<LabelInputComponent key={index} properties={labelInput} />))}
           {states.values.loginError && <div className='font-regular-color1'>{states.values.loginError}</div>}
         </div>
         <ButtonComponent properties={loginButtonProperties}></ButtonComponent>
