@@ -39,7 +39,7 @@ function useFormState() {
 
 
 function LoginPage() {
-  
+
   const navigate = useNavigate();
 
   const states = useFormState();
@@ -52,7 +52,8 @@ function LoginPage() {
     text: 'Login',
     handleClick: () => handleLogin(),
     fitContent: true,
-    additionalClassName: "additional"
+    additionalClassName: "additional",
+    type: 'submit',
   }
 
   /* Set labelInput components properties */
@@ -65,7 +66,7 @@ function LoginPage() {
       states.actions.setEmail(value);
       const emailValidation = StringIsEmpty(value);
       states.actions.setEmailError(emailValidation);
-     
+
     },
     onEnterPressed: (enterPressed: boolean) => {
       if (enterPressed) {
@@ -116,17 +117,22 @@ function LoginPage() {
     }
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    handleLogin();
+    event.preventDefault();
+  };
+
   return (
     <div className='login'>
       <img className='login__img' src={image} />
-      <div className='login__form'>
+      <form className='login__form' onSubmit={handleSubmit} >
         <h1 className='font-style2 font-regular-color7'>Login</h1>
         <div className='login__form__label-inputs-container'>
           {labelInputPropertiesList.map((labelInput, index) => (<LabelInputComponent key={index} properties={labelInput} />))}
           {states.values.loginError && <div className='font-regular-color1'>{states.values.loginError}</div>}
         </div>
         <ButtonComponent properties={loginButtonProperties}></ButtonComponent>
-      </div>
+      </form>
     </div>
   );
 

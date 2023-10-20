@@ -34,6 +34,7 @@ export interface Button {
     * An optional additional className to style the button component.
     */
     additionalClassName?: string,
+    type?: "button" | "submit" | "reset" | undefined,
 }
 
 type Props = {
@@ -49,7 +50,7 @@ function ButtonComponent(props: Props) {
     };
 
     return (
-        <button className={`${props.properties.variant} ${props.properties.fitContent ? 'fit-content' : ''} ${props.properties.additionalClassName}`} onClick={genericHandleClick}>
+        <button type={props.properties.type ?? 'button'} className={`${props.properties.variant} ${props.properties.fitContent ? 'fit-content' : ''} ${props.properties.additionalClassName}`} onClick={genericHandleClick}>
             {props.properties.icon != null ? (<FontAwesomeIcon icon={props.properties.icon} />) : null}
             {props.properties.text}
         </button>
